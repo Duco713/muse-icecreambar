@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muse Icecreambar - Valkenswaard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Spline+Sans:wght@700&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .orange-diamond-pattern {
+            background-color: #fff8f5;
+            background-image:  linear-gradient(135deg, #f4b384 25%, transparent 25%), linear-gradient(225deg, #f4b384 25%, transparent 25%), linear-gradient(45deg, #f4b384 25%, transparent 25%), linear-gradient(315deg, #f4b384 25%, transparent 25%);
+            background-position:  20px 0, 20px 0, 0 0, 0 0;
+            background-size: 40px 40px;
+            background-repeat: repeat;
+            opacity: 0.08;
+        }
+        .polaroid-tilt-left { transform: rotate(-2deg); }
+        .polaroid-tilt-right { transform: rotate(3deg); }
+        .script-font { font-family: 'Pacifico', cursive; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#fab989",
+                      "tertiary-fixed": "#afecfc",
+                      "surface-variant": "#ece0da",
+                      "on-background": "#201b17",
+                      "on-primary-fixed": "#301400",
+                      "on-primary-container": "#72431e",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-surface-variant": "#51443b",
+                      "secondary-fixed": "#e2e2e2",
+                      "error-container": "#ffdad6",
+                      "outline": "#84746a",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#fab989",
+                      "primary": "#84532c",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f7ece6",
+                      "on-primary-fixed-variant": "#683c17",
+                      "on-tertiary-fixed": "#001f25",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "secondary": "#5d5f5f",
+                      "background": "#fff8f5",
+                      "surface": "#fff8f5",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#352f2b",
+                      "inverse-on-surface": "#faeee8",
+                      "surface-tint": "#84532c",
+                      "on-surface": "#201b17",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#fdf1eb",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#ffdcc5",
+                      "on-secondary-container": "#616363",
+                      "primary-container": "#f4b384",
+                      "tertiary-fixed-dim": "#93d0df",
+                      "tertiary": "#256674",
+                      "surface-dim": "#e3d8d2",
+                      "tertiary-container": "#8dcad9",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#ece0da",
+                      "surface-bright": "#fff8f5",
+                      "on-tertiary-container": "#0c5663",
+                      "secondary-container": "#dfe0e0",
+                      "outline-variant": "#d6c3b7",
+                      "surface-container-high": "#f1e6e0",
+                      "on-tertiary-fixed-variant": "#004e5b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "12px",
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "stack-md": "24px",
+                      "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Epilogue"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Epilogue"],
+                      "display-accent": ["Spline Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["13px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "display-accent": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md shadow-[0_8px_30px_rgb(244,115,30,0.04)] py-4 px-margin-mobile md:px-margin-desktop flex justify-between items-center">
+<div class="flex items-center gap-4">
+<img alt="Muse Logo" class="h-10 w-auto object-contain" src="images/Logo.jpg"/>
+<span class="text-headline-md font-headline-md font-extrabold text-primary tracking-tight">Muse Icecreambar</span>
+</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">Start</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#smaken">Onze Smaken</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#sfeer">Sfeer</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#over">Over Ons</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#contact">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm font-bold active:scale-95 transition-transform duration-200">
+            Bestel Nu
+        </button>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+<div class="absolute inset-0 orange-diamond-pattern -z-10"></div>
+<div class="flex-1 text-center md:text-left z-10">
+<h1 class="script-font text-display-accent text-primary mb-4 leading-tight">
+                    Gelato Muse - Het Zoetste Geheim van Valkenswaard!
+                </h1>
+<p class="text-headline-lg font-headline-lg text-on-surface-variant mb-8">
+                    Sla Je Slag Met Onze Vernieuwde Smaken!
+                </p>
+<div class="flex flex-wrap gap-gutter justify-center md:justify-start">
+<a href="#smaken" class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-wider shadow-lg hover:shadow-primary-container/20 transition-all">
+                        Bekijk Menu
+                    </a>
+<a href="#contact" class="bg-surface-container-high text-primary px-8 py-4 rounded-full font-bold uppercase tracking-wider border-2 border-primary">
+                        Onze Locatie
+                    </a>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative bg-white p-4 shadow-xl polaroid-tilt-right rounded-sm z-20">
+<img alt="Bak met vers ijs" class="w-full aspect-square object-cover rounded-sm" src="images/Product13.jpg"/>
+<div class="pt-8 pb-4 text-center">
+<span class="script-font text-headline-md text-primary">Onze Favoriet!</span>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
+</div>
+</section>
+<!-- Onze Smaken Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface" id="smaken">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-2">Zet Je Smaakpapillen In Vuur En Vlam</h2>
+<div class="h-1 w-24 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Flavor 1 -->
+<div class="group relative bg-[#D4EFDF] p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgba(212,239,223,1)] hover:-translate-y-2 transition-all duration-500">
+<div class="overflow-hidden rounded-2xl mb-6">
+<img alt="Crunchy Fudge" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700" src="images/Product4.webp"/>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Crunchy Fudge 2.0</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Onze klassieke chocolade met een crunch die je nog nooit hebt geproefd.</p>
+<span class="inline-block bg-white/50 px-3 py-1 rounded-full text-label-sm font-label-sm">Vegan Optie</span>
+</div>
+<!-- Flavor 2 -->
+<div class="group relative bg-[#E6E6FA] p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgba(230,230,250,1)] hover:-translate-y-2 transition-all duration-500">
+<div class="overflow-hidden rounded-2xl mb-6">
+<img alt="Fresh Berry Blast" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700" src="images/Product12.webp"/>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Fresh Berry Blast</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Een explosie van verse bosvruchten, rechtstreeks van de lokale boer.</p>
+<span class="inline-block bg-white/50 px-3 py-1 rounded-full text-label-sm font-label-sm">Suikervrij</span>
+</div>
+<!-- Flavor 3 -->
+<div class="group relative bg-[#FF9F8C] p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgba(255,159,140,1)] hover:-translate-y-2 transition-all duration-500">
+<div class="overflow-hidden rounded-2xl mb-6"><img alt="Salted Caramel Joy" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700" src="images/Product5.webp"/></div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Salted Caramel Joy</h3>
+<p class="text-on-surface-variant font-body-md mb-4">De perfecte balans tussen zoet en zout met een vleugje zeezout.</p>
+<span class="inline-block bg-white/50 px-3 py-1 rounded-full text-label-sm font-label-sm">Favoriet</span>
+</div>
+</div>
+</section>
+<!-- Sfeer Section -->
+<section class="relative py-stack-lg overflow-hidden bg-on-background text-white" id="sfeer">
+<div class="absolute inset-0 orange-diamond-pattern opacity-10"></div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-lg text-primary-fixed-dim font-bold">
+                        VIBE CHECK
+                    </div>
+<h2 class="text-display-accent font-display-accent text-white">De leukste plek van de markt.</h2>
+<div class="bg-[#E6E6FA] text-primary px-8 py-10 rounded-[40px] shadow-2xl relative polaroid-tilt-left overflow-hidden flex items-center justify-center min-h-[180px]">
+<p class="text-display-accent font-display-accent italic leading-tight text-center w-full">
+                            &ldquo;LICKED IT SO IT&rsquo;S MINE&rdquo;
+                        </p>
+</div>
+</div>
+<div class="relative">
+<img alt="Ice Ice Baby Neon" class="rounded-3xl shadow-2xl border-8 border-white/10 w-full object-cover aspect-[4/5]" src="images/Sfeer2.jpg"/>
+<div class="absolute -bottom-8 -left-8 bg-white p-4 shadow-xl polaroid-tilt-right text-on-surface max-w-[200px]">
+<img alt="Kindje met ijsje" class="w-full aspect-square object-cover mb-2" src="images/Sfeer4.jpg"/>
+<p class="text-label-sm font-label-sm text-center">Gezelligheid!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Over Muse Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-16 items-center" id="over">
+<div class="flex-1 order-2 md:order-1">
+<div class="inline-flex items-center gap-2 text-[#84532c] mb-6">
+<span class="material-symbols-outlined text-[#84532c]">favorite</span>
+<span class="font-bold tracking-widest uppercase text-label-sm">Onze Passie</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-[#84532c] mb-6">Ambacht met een Moderne Twist</h2>
+<div class="space-y-4 text-body-lg text-on-surface-variant leading-relaxed">
+<p>Bij Muse Icecreambar geloven we dat ijs meer is dan alleen een traktatie; het is een ervaring. Onze bar in het hart van Valkenswaard is ontworpen om een glimlach op je gezicht te toveren, van de eerste blik op onze retro-inrichting tot de laatste hap van je favoriete smaak.</p>
+<p>Onze ijsmeesters experimenteren dagelijks met de beste ingrediënten om smaken te creëren die je nergens anders vindt. Of je nu houdt van klassiekers of gedurfde nieuwe combinaties, bij Muse vind je altijd jouw 'sweet spot'.</p>
+</div>
+<div class="mt-10 flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-[#D4EFDF] flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<span class="text-label-sm font-label-sm">Lokaal</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-[#D4EFDF] flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">temp_preferences_custom</span>
+</div>
+<span class="text-label-sm font-label-sm">Vers</span>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 md:order-2 grid grid-cols-2 gap-4">
+<div class="pt-12">
+<img alt="Makers" class="rounded-2xl w-full h-80 object-cover shadow-lg" src="images/Sfeer11.webp"/>
+</div>
+<div>
+<img alt="Interieur Muse" class="rounded-2xl w-full h-96 object-cover shadow-lg" src="images/Sfeer12.jpg"/>
+</div>
+</div>
+</section>
+<!-- Cannoli & Meer Section -->
+<section class="bg-primary-container/10 py-stack-lg px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-4xl mx-auto text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-[#F4B384] mb-4 drop-shadow-sm">Meer Dan Alleen IJs: Ontdek Onze Zoete Extra's!</h2>
+<p class="text-body-lg text-primary">Van krokante Cannoli tot romige Freakshakes, we hebben alles om je dag op te fleuren.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-12">
+<!-- Cannoli Polaroid -->
+<div class="bg-white p-5 shadow-2xl polaroid-tilt-left rounded-sm max-w-sm">
+<img alt="Cannoli Selection" class="w-full aspect-[4/5] object-cover rounded-sm mb-6" src="images/Post2.webp"/>
+<div class="text-center">
+<p class="script-font text-headline-md text-on-surface">Authentiek Italiaans</p>
+</div>
+</div>
+<!-- Extra Decor -->
+<div class="hidden lg:flex flex-col justify-center gap-8">
+<div class="bg-tertiary-container/30 p-8 rounded-full border-4 border-dashed border-tertiary/20">
+<span class="material-symbols-outlined text-6xl text-tertiary" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
+</div>
+<div class="bg-primary-container/30 p-8 rounded-full border-4 border-dashed border-primary/20 self-end">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="bg-[#FF9F8C]/20 px-margin-mobile md:px-margin-desktop py-stack-lg" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-8">
+<h2 class="text-headline-lg font-headline-lg text-primary">Kom Gezellig Langs</h2>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Locatie</h4>
+<p class="text-on-surface-variant">Eindhovenseweg 12A, 5554 AC Valkenswaard</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Openingstijden</h4>
+<p class="text-on-surface-variant">Di - Za: 12:30 - 21:00<br/>Zo: 13:00 - 21:00<br/>Ma: gesloten</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Website</h4>
+<a class="text-on-surface-variant hover:text-primary" href="https://www.museicecreambar.nl" target="_blank" rel="noopener">museicecreambar.nl</a>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-2xl min-h-[400px] relative border-8 border-white">
+<iframe title="Locatie Muse Ice Cream Bar" class="w-full h-full min-h-[400px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Muse+Ice+Cream+Bar,+Eindhovenseweg+12A,+5554+AC+Valkenswaard&output=embed"></iframe>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-stack-lg flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter">
+<div class="mb-6 md:mb-0">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Muse Icecreambar</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">© 2024 Muse Icecreambar Valkenswaard. Licked it so it's mine.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="#">Algemene Voorwaarden</a>
+<a aria-label="Instagram" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 text-label-sm" href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+<span>Instagram</span>
+</a>
+<a aria-label="Facebook" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 text-label-sm" href="https://www.facebook.com/p/Muse-Ice-Cream-Bar-100047643708260/?locale=nl_NL" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+<span>Facebook</span>
+</a>
+</div>
+</footer>
+</body></html>
