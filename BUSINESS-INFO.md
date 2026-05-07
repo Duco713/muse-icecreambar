@@ -15,7 +15,7 @@ opnieuw te moeten vragen. Werk dit bij zodra ontbrekende velden bekend zijn.
 | Bedrijfsnaam | Muse Ice Cream Bar |
 | Adres | Eindhovenseweg 12A, 5554 AC Valkenswaard, NL |
 | Telefoon | [INVULLEN — ontbreekt nog] |
-| E-mail | [INVULLEN — productie-adres, niet `ducoscholten+1@hotmail.com`] |
+| E-mail | [INVULLEN — ontbreekt nog] |
 
 ## Openingstijden
 
@@ -50,9 +50,8 @@ opnieuw te moeten vragen. Werk dit bij zodra ontbrekende velden bekend zijn.
 
 - Ambachtelijk gelato uit Bologna-machine
 - Wekelijks nieuwe smaken
-- Vegan & suikervrije opties
 - Cannoli
-- Freakshakes
+- Milkshakes
 
 ## SEO / doelgroep-keywords
 
