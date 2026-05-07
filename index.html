@@ -151,6 +151,7 @@
 <a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="smaken" href="#smaken">Onze Smaken</a>
 <a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="sfeer" href="#sfeer">Sfeer</a>
 <a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="over" href="#over">Over Ons</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="reviews" href="#reviews">Reviews</a>
 <a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="contact" href="#contact">Contact</a>
 </nav>
 </header>
@@ -160,6 +161,7 @@
 <a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="smaken" href="#smaken">Onze Smaken</a>
 <a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="sfeer" href="#sfeer">Sfeer</a>
 <a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="over" href="#over">Over Ons</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="reviews" href="#reviews">Reviews</a>
 <a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm" data-section="contact" href="#contact">Contact</a>
 </nav>
 </div>
@@ -438,7 +440,7 @@ Lees meer reviews op Google
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
   }
 
-  const sectionIds = ['top', 'smaken', 'sfeer', 'over', 'contact'];
+  const sectionIds = ['top', 'smaken', 'sfeer', 'over', 'reviews', 'contact'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
   const navLinks = document.querySelectorAll('[data-section]');
   let lastActive = null;
