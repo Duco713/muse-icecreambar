@@ -22,6 +22,16 @@
         html { scroll-behavior: smooth; }
         section[id] { scroll-margin-top: 90px; }
         #mobile-menu.open { display: block; }
+        .nav-link.active {
+            color: #84532c !important;
+            font-weight: 700 !important;
+            border-bottom: 2px solid #84532c !important;
+            padding-bottom: 4px;
+        }
+        .mobile-nav-link.active {
+            color: #84532c !important;
+            font-weight: 700 !important;
+        }
         .orange-diamond-pattern {
             background-color: #fff8f5;
             background-image:  linear-gradient(135deg, #f4b384 25%, transparent 25%), linear-gradient(225deg, #f4b384 25%, transparent 25%), linear-gradient(45deg, #f4b384 25%, transparent 25%), linear-gradient(315deg, #f4b384 25%, transparent 25%);
@@ -137,25 +147,25 @@
 </a>
 </div>
 <nav class="hidden md:flex gap-6 items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-base" href="#top">Start</a>
-<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" href="#smaken">Onze Smaken</a>
-<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" href="#sfeer">Sfeer</a>
-<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" href="#over">Over Ons</a>
-<a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" href="#contact">Contact</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="top" href="#top">Start</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="smaken" href="#smaken">Onze Smaken</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="sfeer" href="#sfeer">Sfeer</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="over" href="#over">Over Ons</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-base" data-section="contact" href="#contact">Contact</a>
 </nav>
 </header>
 <div id="mobile-menu" class="hidden md:hidden fixed top-[72px] left-0 right-0 bg-background/98 backdrop-blur-md shadow-lg z-40 border-t border-outline-variant">
 <nav class="flex flex-col py-4 px-margin-mobile">
-<a class="py-3 text-primary font-bold font-label-sm border-b border-outline-variant/50" href="#top">Start</a>
-<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#smaken">Onze Smaken</a>
-<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#sfeer">Sfeer</a>
-<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#over">Over Ons</a>
-<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm" href="#contact">Contact</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="top" href="#top">Start</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="smaken" href="#smaken">Onze Smaken</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="sfeer" href="#sfeer">Sfeer</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" data-section="over" href="#over">Over Ons</a>
+<a class="mobile-nav-link py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm" data-section="contact" href="#contact">Contact</a>
 </nav>
 </div>
 <main class="pt-24">
 <!-- Hero Section -->
-<section class="relative px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+<section id="top" class="relative px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
 <div class="absolute inset-0 orange-diamond-pattern -z-10"></div>
 <div class="flex-1 text-center md:text-left z-10">
 <h1 class="script-font text-display-accent text-primary mb-4 leading-tight">
@@ -419,13 +429,37 @@ Lees meer reviews op Google
 (function(){
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
-  if (!toggle || !menu) return;
-  const close = () => { menu.classList.add('hidden'); toggle.setAttribute('aria-expanded','false'); };
-  toggle.addEventListener('click', () => {
-    const isHidden = menu.classList.toggle('hidden');
-    toggle.setAttribute('aria-expanded', String(!isHidden));
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  if (toggle && menu) {
+    const close = () => { menu.classList.add('hidden'); toggle.setAttribute('aria-expanded','false'); };
+    toggle.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  }
+
+  const sectionIds = ['top', 'smaken', 'sfeer', 'over', 'contact'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  const navLinks = document.querySelectorAll('[data-section]');
+  let lastActive = null;
+  function setActive(id) {
+    if (id === lastActive) return;
+    lastActive = id;
+    navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === id));
+  }
+  function onScroll() {
+    const offset = 120;
+    const scrollPos = window.scrollY + offset;
+    let current = sections[0]?.id || 'top';
+    for (const s of sections) {
+      if (s.offsetTop <= scrollPos) current = s.id;
+    }
+    setActive(current);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', onScroll);
+  onScroll();
 })();
 </script>
 </body></html>
