@@ -84,9 +84,39 @@
         .reveal-delay-1 { transition-delay: 0.12s; }
         .reveal-delay-2 { transition-delay: 0.24s; }
         .reveal-delay-3 { transition-delay: 0.36s; }
+        .star-rating .star {
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.4) rotate(-30deg);
+            transition: opacity 0.35s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .reveal.in-view .star-rating .star { opacity: 1; transform: scale(1) rotate(0); }
+        .star-rating .star:nth-child(1) { transition-delay: 0.30s; }
+        .star-rating .star:nth-child(2) { transition-delay: 0.42s; }
+        .star-rating .star:nth-child(3) { transition-delay: 0.54s; }
+        .star-rating .star:nth-child(4) { transition-delay: 0.66s; }
+        .star-rating .star:nth-child(5) { transition-delay: 0.78s; }
+        @keyframes sticker-wiggle {
+            0%, 100% { transform: rotate(0); }
+            20%      { transform: rotate(-8deg); }
+            40%      { transform: rotate(7deg); }
+            60%      { transform: rotate(-5deg); }
+            80%      { transform: rotate(3deg); }
+        }
+        .wiggle-on-hover { transition: transform 0.2s ease; }
+        .wiggle-on-hover:hover { animation: sticker-wiggle 0.6s ease-in-out; }
+        @keyframes sticker-float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50%      { transform: translateY(-6px) rotate(2deg); }
+        }
+        .sticker-float     { animation: sticker-float 5s ease-in-out infinite; }
+        .sticker-float-alt { animation: sticker-float 6s ease-in-out infinite -2.5s; }
         @media (prefers-reduced-motion: reduce) {
-            .polaroid-tilt-left, .polaroid-tilt-right { animation: none; }
+            .polaroid-tilt-left, .polaroid-tilt-right,
+            .sticker-float, .sticker-float-alt,
+            .wiggle-on-hover:hover { animation: none; }
             .reveal { opacity: 1; transform: none; transition: none; }
+            .star-rating .star { opacity: 1; transform: none; transition: none; }
         }
         .script-font { font-family: 'Pacifico', cursive; }
     </style>
@@ -311,13 +341,13 @@
 <p>Wij experimenteren dagelijks met de beste ingrediënten om smaken te creëren die je nergens anders vindt. Of je nu houdt van klassiekers of gedurfde nieuwe combinaties, bij Muse vind je altijd jouw 'sweet spot'.</p>
 </div>
 <div class="mt-10 flex gap-4">
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center wiggle-on-hover cursor-default">
 <div class="w-16 h-16 rounded-full bg-[#D4EFDF] flex items-center justify-center text-primary mb-2">
 <span class="material-symbols-outlined">eco</span>
 </div>
 <span class="text-label-sm font-label-sm">Lokaal</span>
 </div>
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center wiggle-on-hover cursor-default">
 <div class="w-16 h-16 rounded-full bg-[#D4EFDF] flex items-center justify-center text-primary mb-2">
 <span class="material-symbols-outlined">temp_preferences_custom</span>
 </div>
@@ -350,10 +380,10 @@
 </div>
 <!-- Extra Decor -->
 <div class="hidden lg:flex flex-col justify-center gap-8">
-<div class="bg-tertiary-container/30 p-8 rounded-full border-4 border-dashed border-tertiary/20">
+<div class="bg-tertiary-container/30 p-8 rounded-full border-4 border-dashed border-tertiary/20 sticker-float">
 <span class="material-symbols-outlined text-6xl text-tertiary" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
 </div>
-<div class="bg-primary-container/30 p-8 rounded-full border-4 border-dashed border-primary/20 self-end">
+<div class="bg-primary-container/30 p-8 rounded-full border-4 border-dashed border-primary/20 self-end sticker-float-alt">
 <span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
 </div>
 </div>
@@ -364,14 +394,14 @@
 <div class="text-center mb-12 reveal">
 <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Wat onze klanten zeggen</h2>
 <div class="flex items-center justify-center gap-3 mb-2">
-<span class="text-3xl tracking-widest text-[#F4B384]">★★★★★</span>
-<span class="text-headline-md font-headline-md text-primary">4.9</span>
+<span class="text-3xl tracking-widest text-[#F4B384] star-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>
+<span class="text-headline-md font-headline-md text-primary"><span class="counter" data-target="4.9" data-decimals="1">0.0</span></span>
 </div>
-<p class="text-body-md text-on-surface-variant">Beoordelingen op Google</p>
+<p class="text-body-md text-on-surface-variant"><span class="counter" data-target="182">0</span> beoordelingen op Google</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-6xl mx-auto">
 <div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all reveal">
-<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4 star-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
 <p class="text-body-md text-on-surface italic mb-6">&ldquo;Ondanks dat ik vaak voor mijn &lsquo;standaard&rsquo; ijsje ga, is het hier elke keer weer genieten. Wat ik extra waardeer, is dat vaste klanten worden herkend &mdash; we krijgen ons ijsje altijd met een gezellig praatje.&rdquo;</p>
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">J</div>
@@ -382,7 +412,7 @@
 </div>
 </div>
 <div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all reveal reveal-delay-1">
-<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4 star-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
 <p class="text-body-md text-on-surface italic mb-6">&ldquo;Wat een mooie zaak!!! Heerlijk ijs, en koffie zeker de moeite waard. Ton en Angelique zijn fantastische mensen die altijd blij zijn als je komt &mdash; super aardig en gastvrij.&rdquo;</p>
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">A</div>
@@ -393,7 +423,7 @@
 </div>
 </div>
 <div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all reveal reveal-delay-2">
-<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4 star-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
 <p class="text-body-md text-on-surface italic mb-6">&ldquo;Wij komen hier iedere keer weer terug voor het lekkerste ijs uit de regio! Elke week is er wel een nieuwe smaak, heerlijk en ambachtelijk bereid. De eigenaren staan meestal zelf achter de balie en zijn altijd in voor een praatje. Kortom, een echte aanwinst voor Valkenswaard!&rdquo;</p>
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">D</div>
@@ -522,6 +552,41 @@ Lees meer reviews op Google
     reveals.forEach(el => io.observe(el));
   } else {
     reveals.forEach(el => el.classList.add('in-view'));
+  }
+
+  const counters = document.querySelectorAll('.counter');
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const format = (v) => decimals > 0 ? v.toFixed(decimals) : Math.floor(v).toString();
+    if (reduceMotion || isNaN(target)) {
+      el.textContent = format(target);
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = format(target * eased);
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = format(target);
+    }
+    requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window && counters.length) {
+    const cIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          cIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => cIO.observe(el));
+  } else {
+    counters.forEach(animateCounter);
   }
 })();
 </script>
