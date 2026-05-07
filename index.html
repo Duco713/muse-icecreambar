@@ -454,6 +454,8 @@ Lees meer reviews op Google
     for (const s of sections) {
       if (s.offsetTop <= scrollPos) current = s.id;
     }
+    const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+    if (nearBottom && sections.length) current = sections[sections.length - 1].id;
     setActive(current);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
