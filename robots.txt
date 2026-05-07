@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duco713.github.io/muse-icecreambar/sitemap.xml
