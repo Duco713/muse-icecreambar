@@ -3,12 +3,24 @@
 <html lang="nl"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Muse Icecreambar - Valkenswaard</title>
+<title>Muse Icecreambar - Ambachtelijk ijs in Valkenswaard</title>
+<meta name="description" content="Muse Icecreambar in Valkenswaard: ambachtelijk gemaakt ijs, cannoli en koffie. Bezoek ons aan de Eindhovenseweg 12A en ontdek onze smaken."/>
+<link rel="icon" type="image/jpeg" href="images/Logo.jpg"/>
+<link rel="apple-touch-icon" href="images/Logo.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Muse Icecreambar - Ambachtelijk ijs in Valkenswaard"/>
+<meta property="og:description" content="Ambachtelijk gemaakt ijs, cannoli en koffie in het hart van Valkenswaard."/>
+<meta property="og:image" content="images/Sfeer2.jpg"/>
+<meta property="og:locale" content="nl_NL"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Spline+Sans:wght@700&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 90px; }
+        #mobile-menu.open { display: block; }
         .orange-diamond-pattern {
             background-color: #fff8f5;
             background-image:  linear-gradient(135deg, #f4b384 25%, transparent 25%), linear-gradient(225deg, #f4b384 25%, transparent 25%), linear-gradient(45deg, #f4b384 25%, transparent 25%), linear-gradient(315deg, #f4b384 25%, transparent 25%);
@@ -114,21 +126,32 @@
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md shadow-[0_8px_30px_rgb(244,115,30,0.04)] py-4 px-margin-mobile md:px-margin-desktop flex justify-between items-center">
+<div class="flex items-center gap-3">
+<button id="menu-toggle" class="md:hidden p-2 -ml-2 text-primary" aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 <a href="#top" class="flex items-center gap-4 cursor-pointer">
 <img alt="Muse Logo" class="h-10 w-10 object-cover rounded-full" src="images/Logo.jpg"/>
 <span class="text-headline-md font-headline-md font-extrabold text-primary tracking-tight">Muse Icecreambar</span>
 </a>
+</div>
 <nav class="hidden md:flex gap-gutter">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">Start</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#top">Start</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#smaken">Onze Smaken</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#sfeer">Sfeer</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#over">Over Ons</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-all duration-300 font-label-sm text-label-sm" href="#contact">Contact</a>
 </nav>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm font-bold active:scale-95 transition-transform duration-200">
-            Bestel Nu
-        </button>
 </header>
+<div id="mobile-menu" class="hidden md:hidden fixed top-[72px] left-0 right-0 bg-background/98 backdrop-blur-md shadow-lg z-40 border-t border-outline-variant">
+<nav class="flex flex-col py-4 px-margin-mobile">
+<a class="py-3 text-primary font-bold font-label-sm border-b border-outline-variant/50" href="#top">Start</a>
+<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#smaken">Onze Smaken</a>
+<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#sfeer">Sfeer</a>
+<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm border-b border-outline-variant/50" href="#over">Over Ons</a>
+<a class="py-3 text-on-surface-variant font-medium hover:text-primary font-label-sm" href="#contact">Contact</a>
+</nav>
+</div>
 <main class="pt-24">
 <!-- Hero Section -->
 <section class="relative px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
@@ -279,6 +302,58 @@
 </div>
 </div>
 </section>
+<!-- Reviews Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface" id="reviews">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-4">Wat onze klanten zeggen</h2>
+<div class="flex items-center justify-center gap-3 mb-2">
+<span class="text-3xl tracking-widest text-[#F4B384]">★★★★★</span>
+<span class="text-headline-md font-headline-md text-primary">4.9</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Beoordelingen op Google</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-6xl mx-auto">
+<div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all">
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<p class="text-body-md text-on-surface italic mb-6">&ldquo;Tasty ice cream, nice atmosphere of a tiny street café. I can recommend chocolate with hazelnuts.&rdquo;</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">K</div>
+<div>
+<p class="font-bold text-on-surface text-label-sm">Kotya Karapetyan</p>
+<p class="text-label-sm text-on-surface-variant">Google Review</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all">
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<p class="text-body-md text-on-surface italic mb-6">&ldquo;Delicious ice cream and super friendly service!&rdquo;</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">J</div>
+<div>
+<p class="font-bold text-on-surface text-label-sm">Juliana Tiagua</p>
+<p class="text-label-sm text-on-surface-variant">Google Review</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all">
+<div class="text-2xl tracking-widest text-[#F4B384] mb-4">★★★★★</div>
+<p class="text-body-md text-on-surface italic mb-6">&ldquo;Ice cream place operated with love and passion. Icecream was delicious. I tried a couple different flavours and all taste superb. Owners were very friendly.&rdquo;</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">L</div>
+<div>
+<p class="font-bold text-on-surface text-label-sm">Lukas Husk</p>
+<p class="text-label-sm text-on-surface-variant">Google Review</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="https://www.google.com/search?q=Muse+Ice+Cream+Bar+Valkenswaard" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+Lees meer reviews op Google
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</section>
 <!-- Contact Section -->
 <section class="bg-[#FF9F8C]/20 px-margin-mobile md:px-margin-desktop py-stack-lg" id="contact">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -327,8 +402,8 @@
 <p class="text-label-sm font-label-sm text-on-surface-variant mt-2">© 2024 Muse Icecreambar Valkenswaard. Licked it so it's mine.</p>
 </div>
 <div class="flex flex-wrap gap-8">
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="#">Algemene Voorwaarden</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="privacy.html">Privacy Policy</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="voorwaarden.html">Algemene Voorwaarden</a>
 <a aria-label="Instagram" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 text-label-sm" href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener">
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
 <span>Instagram</span>
@@ -339,4 +414,17 @@
 </a>
 </div>
 </footer>
+<script>
+(function(){
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+  const close = () => { menu.classList.add('hidden'); toggle.setAttribute('aria-expanded','false'); };
+  toggle.addEventListener('click', () => {
+    const isHidden = menu.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
+</script>
 </body></html>
