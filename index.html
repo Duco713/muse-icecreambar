@@ -28,6 +28,62 @@
 <meta name="twitter:title" content="Muse Icecreambar — Ambachtelijk Italiaans IJs in Valkenswaard"/>
 <meta name="twitter:description" content="Geniet van ambachtelijk gemaakt gelato bij Muse Icecreambar aan de Eindhovenseweg in Valkenswaard. Wisselende smaken, dagelijks vers."/>
 <meta name="twitter:image" content="https://duco713.github.io/muse-icecreambar/assets/og-image.jpg"/>
+<!--
+  TODO (JSON-LD aanvullen):
+  - telephone: vaste of mobiele zaaktelefoon opvragen en als E.164 invoegen, bijv. "+31 40 123 45 67"
+  - geo: 51.3505/5.4615 is bij benadering — verifieer met exacte coordinaten van Eindhovenseweg 12A
+  - sameAs[0]: vervang Google Maps zoek-URL door definitieve Google Business Profile / Maps Place URL
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "@id": "https://duco713.github.io/muse-icecreambar/#business",
+  "name": "Muse Icecreambar",
+  "image": "https://duco713.github.io/muse-icecreambar/images/Product9.webp",
+  "logo": "https://duco713.github.io/muse-icecreambar/images/Logo.jpg",
+  "url": "https://duco713.github.io/muse-icecreambar/",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eindhovenseweg 12A",
+    "addressLocality": "Valkenswaard",
+    "postalCode": "5554 AC",
+    "addressCountry": "NL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.3505,
+    "longitude": 5.4615
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "12:30",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "13:00",
+      "closes": "21:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "182",
+    "bestRating": "5"
+  },
+  "servesCuisine": "Italian Gelato",
+  "sameAs": [
+    "https://www.google.com/maps?q=Muse+Ice+Cream+Bar,+Eindhovenseweg+12A,+5554+AC+Valkenswaard",
+    "https://www.instagram.com/muse_icecreambar/",
+    "https://www.facebook.com/p/Muse-Ice-Cream-Bar-100047643708260/?locale=nl_NL"
+  ]
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Spline+Sans:wght@700&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
