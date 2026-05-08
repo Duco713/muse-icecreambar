@@ -1,3 +1,5 @@
 .DS_Store
 Muse.zip
 *.zip
+node_modules/
+package-lock.json

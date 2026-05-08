@@ -1,0 +1,10 @@
+{
+  "name": "muse-icecreambar",
+  "private": true,
+  "scripts": {
+    "responsive-images": "node scripts/generate-responsive-images.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
