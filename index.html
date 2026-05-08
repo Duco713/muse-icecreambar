@@ -244,8 +244,8 @@
 <section id="top" class="relative px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 overflow-hidden">
 <div class="absolute inset-0 orange-diamond-pattern -z-10"></div>
 <div class="flex-1 text-center md:text-left z-10 reveal">
-<h1 class="script-font text-display-accent text-primary mb-4 leading-tight">
-                    Muse Icecreambar &mdash; het zoetste geheim van Valkenswaard!
+<h1 class="script-font text-display-accent text-primary mb-4 leading-snug">
+                    Muse gelato &mdash; het zoetste geheim van Valkenswaard!
                 </h1>
 <p class="text-headline-lg font-headline-lg text-on-surface-variant mb-8">
                     Sla je slag met onze vernieuwde smaken!
@@ -486,7 +486,7 @@ Lees meer reviews op Google
 <footer class="bg-surface-container-low w-full py-stack-lg flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter">
 <div class="mb-6 md:mb-0">
 <span class="text-headline-sm font-headline-sm font-bold text-on-surface">Muse Icecreambar</span>
-<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">© 2026 Muse Icecreambar Valkenswaard.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">© <span id="copyright-year">2026</span> Muse Icecreambar Valkenswaard.</p>
 </div>
 <div class="flex flex-wrap gap-8">
 <a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-sm" href="privacy.html">Privacy Policy</a>
@@ -590,4 +590,5 @@ Lees meer reviews op Google
   }
 })();
 </script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body></html>
