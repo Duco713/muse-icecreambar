@@ -28,12 +28,7 @@
 <meta name="twitter:title" content="Muse Icecreambar — Ambachtelijk Italiaans IJs in Valkenswaard"/>
 <meta name="twitter:description" content="Geniet van ambachtelijk gemaakt gelato bij Muse Icecreambar aan de Eindhovenseweg in Valkenswaard. Wisselende smaken, dagelijks vers."/>
 <meta name="twitter:image" content="https://duco713.github.io/muse-icecreambar/assets/og-image.jpg"/>
-<!--
-  TODO (JSON-LD aanvullen):
-  - telephone: vaste of mobiele zaaktelefoon opvragen en als E.164 invoegen, bijv. "+31 40 123 45 67"
-  - geo: 51.3505/5.4615 is bij benadering — verifieer met exacte coordinaten van Eindhovenseweg 12A
-  - sameAs[0]: vervang Google Maps zoek-URL door definitieve Google Business Profile / Maps Place URL
--->
+<!-- Telefoonnummer is bewust niet openbaar gemaakt door de zaak; telephone-veld daarom weggelaten. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,8 +48,8 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 51.3505,
-    "longitude": 5.4615
+    "latitude": 51.351613890764774,
+    "longitude": 5.459543081896603
   },
   "openingHoursSpecification": [
     {
@@ -78,7 +73,33 @@
   },
   "servesCuisine": "Italian Gelato",
   "sameAs": [
-    "https://www.google.com/maps?q=Muse+Ice+Cream+Bar,+Eindhovenseweg+12A,+5554+AC+Valkenswaard",
+    "https://maps.app.goo.gl/Sd2Ec6a8SQfSy6Sz6",
+    "https://www.instagram.com/muse_icecreambar/",
+    "https://www.facebook.com/p/Muse-Ice-Cream-Bar-100047643708260/?locale=nl_NL"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://duco713.github.io/muse-icecreambar/#organization",
+  "name": "Muse Icecreambar",
+  "url": "https://duco713.github.io/muse-icecreambar/",
+  "logo": "https://duco713.github.io/muse-icecreambar/images/Logo.jpg",
+  "founder": [
+    { "@type": "Person", "name": "Daan" },
+    { "@type": "Person", "name": "Daymi" }
+  ],
+  "foundingDate": "2023",
+  "areaServed": {
+    "@type": "City",
+    "name": "Valkenswaard"
+  },
+  "location": {
+    "@id": "https://duco713.github.io/muse-icecreambar/#business"
+  },
+  "sameAs": [
     "https://www.instagram.com/muse_icecreambar/",
     "https://www.facebook.com/p/Muse-Ice-Cream-Bar-100047643708260/?locale=nl_NL"
   ]
