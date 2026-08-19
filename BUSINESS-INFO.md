@@ -49,7 +49,9 @@ opnieuw te moeten vragen. Werk dit bij zodra ontbrekende velden bekend zijn.
 ## USPs (Unique Selling Points)
 
 - Ambachtelijk gelato uit Bologna-machine
-- Altijd drie wisselsmaken naast de vaste favorieten
+- Elke week drie andere wisselsmaken naast de vaste favorieten
+  (de smaken wisselen wekelijks; de site kondigt ze bewust NIET aan —
+   de eigenaren kunnen dat niet bijhouden en willen mensen laten ontdekken)
 - Cannoli
 - Milkshakes
 
