@@ -76,6 +76,8 @@
     --c-on-action: 255 255 255;   /* #ffffff */
     --c-emphasis: 132 83 44;      /* #84532c */
     --c-decor: 244 179 132;       /* #f4b384 */
+    --c-quote: 230 230 250;       /* #e6e6fa  lila vlak */
+    --c-on-quote: 132 83 44;      /* #84532c */
 }
 
 [data-theme="bold"] {
@@ -123,4 +125,6 @@
     --c-on-action: 255 255 255;   /* #ffffff */
     --c-emphasis: 229 64 127;     /* #e5407f  roze, alleen groot */
     --c-decor: 196 77 10;         /* #c44d0a  oranje, sterren en iconen */
+    --c-quote: 240 83 143;        /* #f0538f  de merkroze, als vlak */
+    --c-on-quote: 255 255 255;    /* #ffffff  wit erop: 3,3 — quote is 48px */
 }

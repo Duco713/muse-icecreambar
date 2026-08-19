@@ -14,6 +14,8 @@ tailwind.config = {
     extend: {
       "colors": {
               "action": "rgb(var(--c-action) / <alpha-value>)",
+              "quote": "rgb(var(--c-quote) / <alpha-value>)",
+              "on-quote": "rgb(var(--c-on-quote) / <alpha-value>)",
               "on-action": "rgb(var(--c-on-action) / <alpha-value>)",
               "emphasis": "rgb(var(--c-emphasis) / <alpha-value>)",
               "decor": "rgb(var(--c-decor) / <alpha-value>)",

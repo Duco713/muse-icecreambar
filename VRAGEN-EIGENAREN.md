@@ -36,6 +36,14 @@ en halen de site het verst vooruit.
       zegt daar niets over, "mango-chili" wel. Eenmalig aanleveren, daarna nooit
       meer bijwerken.
 
+- [ ] **Op welk adres komt de site te staan — museicecreambar.nl?**
+      In de contactsectie staat nu een rij "Website" die naar
+      `museicecreambar.nl` linkt, alsof dat een ándere site is. Als deze site
+      dáár komt te staan, moet die rij weg (je linkt niet naar jezelf) en
+      moeten de canonical- en deel-URL's mee, die wijzen nu allemaal naar
+      `duco713.github.io`. Blijft het GitHub Pages, dan blijft alles zoals het
+      is. Wel even weten vóór livegang, want daarna kost het Google tijd.
+
 - [ ] **Telefoonnummer en e-mailadres — of expliciet: liever niet?**
       Staat nu op `[INVULLEN]` in `BUSINESS-INFO.md`. Als ze bewust geen
       telefoonnummer online willen, is dat ook een antwoord; dan halen we de
