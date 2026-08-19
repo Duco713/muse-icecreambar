@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Onze IJssmaken | Muse Icecreambar Valkenswaard</title>
-<meta name="description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten zoals Snickers ijs en Black Heaven, klassieke gelato, sorbets en wekelijks wisselende smaken."/>
+<meta name="description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten zoals Snickers ijs en Black Heaven, klassieke gelato, sorbets en altijd drie wisselende smaken."/>
 <link rel="canonical" href="https://duco713.github.io/muse-icecreambar/smaken.html"/>
 <link rel="stylesheet" href="assets/theme.css"/>
 <!-- Zet het palet vóór de eerste paint, anders zie je even de verkeerde kleur. -->
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Muse Icecreambar"/>
 <meta property="og:title" content="Onze IJssmaken | Muse Icecreambar Valkenswaard"/>
-<meta property="og:description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten, klassieke gelato, sorbets en wekelijks wisselende smaken."/>
+<meta property="og:description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten, klassieke gelato, sorbets en altijd drie wisselende smaken."/>
 <meta property="og:image" content="https://duco713.github.io/muse-icecreambar/assets/og-image.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -27,7 +27,7 @@
 <meta property="og:locale" content="nl_NL"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Onze IJssmaken | Muse Icecreambar Valkenswaard"/>
-<meta name="twitter:description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten, klassieke gelato, sorbets en wekelijks wisselende smaken."/>
+<meta name="twitter:description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten, klassieke gelato, sorbets en altijd drie wisselende smaken."/>
 <meta name="twitter:image" content="https://duco713.github.io/muse-icecreambar/assets/og-image.jpg"/>
 <script type="application/ld+json">
 {
@@ -69,6 +69,24 @@ h1, h2, h3 { font-family: 'Epilogue', sans-serif; }
 .flavor-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .flavor-list li { background: #fff; border: 1px solid rgb(var(--c-outline-variant)); border-radius: 9999px; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.95rem; }
 .flavor-card { border: 1px solid rgb(var(--c-outline-variant)); border-radius: 1.25rem; padding: 1.25rem 1.5rem; background: #fff; }
+.menu-list { list-style: none; padding: 0; margin: 0; }
+.menu-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+                padding: 0.5rem 0; border-bottom: 1px dotted rgb(var(--c-outline-variant)); }
+.menu-list li:last-child { border-bottom: 0; }
+.menu-price { font-weight: 700; color: rgb(var(--c-primary)); white-space: nowrap; }
+.menu-note { border: 1px dashed rgb(var(--c-outline-variant)); border-radius: 0.75rem;
+             padding: 0.6rem 0.9rem; margin-bottom: 1rem; font-size: 0.85rem;
+             color: rgb(var(--c-on-surface-variant)); background: rgb(var(--c-background)); }
+.flavor-photo { margin: -1.25rem -1.5rem 1rem; overflow: hidden; border-radius: 1.25rem 1.25rem 0 0; }
+.flavor-photo img { display: block; width: 100%; height: 200px; object-fit: cover; }
+.mystery-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.mystery-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem;
+                border: 2px dashed rgb(var(--c-outline-variant)); border-radius: 1rem; padding: 1.5rem 0.5rem;
+                background: rgb(var(--c-background)); text-align: center; }
+.mystery-mark { font-family: 'Epilogue', sans-serif; font-size: 2rem; font-weight: 800; line-height: 1;
+                color: rgb(var(--c-emphasis)); }
+.mystery-label { font-size: 0.8rem; font-weight: 600; color: rgb(var(--c-on-surface-variant)); }
+@media (max-width: 480px) { .mystery-card { padding: 1rem 0.25rem; } .mystery-mark { font-size: 1.5rem; } }
 </style>
 </head>
 <body class="px-6 md:px-16 py-12 max-w-3xl mx-auto">
@@ -87,13 +105,23 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
 </div>
 
 <h1 class="text-4xl font-extrabold text-primary mb-2">Onze ijssmaken</h1>
-<p class="text-base text-on-surface-variant mb-2 leading-relaxed">Ambachtelijk gelato uit Valkenswaard, dagelijks vers gemaakt. Naast onze vaste favorieten komen er <strong>wekelijks nieuwe smaken</strong> bij.</p>
+<p class="text-base text-on-surface-variant mb-2 leading-relaxed">Ambachtelijk gelato uit Valkenswaard, dagelijks vers gemaakt. Naast onze vaste favorieten staan er <strong>altijd drie wisselsmaken</strong> in de vitrine.</p>
 <p class="text-sm text-on-surface-variant mb-10">Laatst bijgewerkt: juni 2026</p>
 
 <!-- ======================= VASTE FAVORIETEN (BEVESTIGD) ======================= -->
 <section class="mb-12">
 <h2 class="text-2xl font-bold text-primary mb-5">Vaste favorieten</h2>
 <div class="grid gap-4">
+<!--
+  FOTO PER SMAAK (volgend seizoen)
+  De eigenaren willen later bij elke smaak een foto. De kaart is daarop
+  voorbereid: plak het blok hieronder direct na de openende <div> van een
+  flavor-card en de opmaak schikt zich vanzelf.
+
+  <div class="flavor-photo">
+    <img src="images/Product4-640.webp" alt="Bak Snickers-gelato met chocoladestukjes en pinda's" width="640" height="800" loading="lazy" decoding="async"/>
+  </div>
+-->
 <div class="flavor-card">
 <div class="flex items-center justify-between gap-3 mb-1">
 <h3 class="text-lg font-bold text-on-surface">Snickers ijs</h3>
@@ -158,18 +186,84 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
 
 <!-- ======================= WISSELENDE SMAKEN ======================= -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold text-primary mb-3">Wisselende smaken van de week</h2>
+<h2 class="text-2xl font-bold text-primary mb-3">De drie wisselsmaken</h2>
 <div class="flavor-card bg-surface-container-low border-outline-variant">
-<p class="text-on-surface-variant leading-relaxed mb-3">Elke week experimenteren we met verse ingrediënten en zetten we nieuwe smaken in de vitrine. Het actuele aanbod wisselt — kom langs of houd onze socials in de gaten.</p>
+<p class="text-on-surface-variant leading-relaxed mb-5">Naast de vaste smaken staan er altijd drie wisselsmaken in de vitrine. Welke dat zijn verklappen we niet &mdash; dat ontdek je het lekkerst ter plekke.</p>
+<div class="mystery-row">
+<div class="mystery-card"><span class="mystery-mark" aria-hidden="true">?</span><span class="mystery-label">Wisselsmaak</span></div>
+<div class="mystery-card"><span class="mystery-mark" aria-hidden="true">?</span><span class="mystery-label">Wisselsmaak</span></div>
+<div class="mystery-card"><span class="mystery-mark" aria-hidden="true">?</span><span class="mystery-label">Wisselsmaak</span></div>
+</div>
+<p class="text-on-surface-variant leading-relaxed mt-5 mb-0">Kom langs in Valkenswaard en kijk wat er vandaag staat.</p>
+</div>
+
 <!--
-  TIP: Wil je de smaak/smaken van déze week tonen? Vul ze hieronder in.
-  Verwijder anders dit lijstje. Voorbeeld:
+  ============================================================================
+  BEWAARD: aankondiging van de smaken van de week
+  ============================================================================
+  De eigenaren gaven aan dit misschien in de toekomst wekelijks te willen
+  aankondigen, maar het nu niet te kunnen bijhouden. De opmaak daarvoor staat
+  hieronder klaar. Wil je het aanzetten: haal dit commentaarblok weg, vul de
+  smaken in, en haal de drie vraagteken-kaartjes hierboven weg.
+
+  <p class="text-on-surface-variant leading-relaxed mb-3">Deze week in de vitrine:</p>
   <ul class="flavor-list">
-    <li>Bijv. Limoncello</li>
-    <li>Bijv. Aardbei-basilicum</li>
+    <li>Limoncello</li>
+    <li>Aardbei-basilicum</li>
+    <li>Stroopwafel</li>
   </ul>
+  <a href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener" class="inline-block font-semibold text-primary hover:underline">Bekijk de smaak van de week op Instagram &rarr;</a>
+  ============================================================================
 -->
-<a href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener" class="inline-block font-semibold text-primary hover:underline">Bekijk de smaak van de week op Instagram →</a>
+</section>
+
+<!-- ======================= MENUKAART ======================= -->
+<!--
+  De eigenaren willen de menukaart op de site. Structuur staat klaar; de
+  prijzen en de precieze regels moeten zij nog aanleveren. Vul de prijs in
+  waar nu &mdash; staat, verwijder wat jullie niet verkopen en voeg toe wat
+  ontbreekt. Elke regel is één <li>. Zodra dit klopt, kan de gele
+  concept-balk bovenaan weg.
+-->
+<section class="mb-12">
+<h2 class="text-2xl font-bold text-primary mb-2">Menukaart</h2>
+<p class="text-on-surface-variant mb-5 leading-relaxed">Wat er verder in de vitrine en achter de bar staat.</p>
+<div class="menu-note">Prijzen worden nog aangeleverd door Muse.</div>
+<div class="grid gap-4">
+<div class="flavor-card">
+<h3 class="text-lg font-bold text-on-surface mb-3">IJs</h3>
+<ul class="menu-list">
+<li><span>Hoorntje &mdash; 1 bol</span><span class="menu-price">&mdash;</span></li>
+<li><span>Hoorntje &mdash; 2 bollen</span><span class="menu-price">&mdash;</span></li>
+<li><span>Hoorntje &mdash; 3 bollen</span><span class="menu-price">&mdash;</span></li>
+<li><span>Bakje &mdash; 1 bol</span><span class="menu-price">&mdash;</span></li>
+<li><span>Bakje &mdash; 2 bollen</span><span class="menu-price">&mdash;</span></li>
+<li><span>Bakje &mdash; 3 bollen</span><span class="menu-price">&mdash;</span></li>
+<li><span>Slagroom</span><span class="menu-price">&mdash;</span></li>
+</ul>
+</div>
+<div class="flavor-card">
+<h3 class="text-lg font-bold text-on-surface mb-3">Cannoli</h3>
+<ul class="menu-list">
+<li><span>Cannoli &mdash; per stuk</span><span class="menu-price">&mdash;</span></li>
+<li><span>Cannoli &mdash; doos om mee te nemen</span><span class="menu-price">&mdash;</span></li>
+</ul>
+</div>
+<div class="flavor-card">
+<h3 class="text-lg font-bold text-on-surface mb-3">Milkshakes</h3>
+<ul class="menu-list">
+<li><span>Milkshake</span><span class="menu-price">&mdash;</span></li>
+</ul>
+</div>
+<div class="flavor-card">
+<h3 class="text-lg font-bold text-on-surface mb-3">Koffie &amp; drinken</h3>
+<ul class="menu-list">
+<li><span>Koffie</span><span class="menu-price">&mdash;</span></li>
+<li><span>Cappuccino</span><span class="menu-price">&mdash;</span></li>
+<li><span>Thee</span><span class="menu-price">&mdash;</span></li>
+<li><span>Frisdrank</span><span class="menu-price">&mdash;</span></li>
+</ul>
+</div>
 </div>
 </section>
 

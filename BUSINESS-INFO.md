@@ -4,7 +4,7 @@ Centrale bron voor alle bedrijfsgegevens, USPs en SEO-keywords.
 Claude Code (en andere tools) kunnen dit bestand referenceren in plaats van alles
 opnieuw te moeten vragen. Werk dit bij zodra ontbrekende velden bekend zijn.
 
-> **Peildatum:** 6 mei 2026
+> **Peildatum:** 19 augustus 2026
 
 ---
 
@@ -49,7 +49,7 @@ opnieuw te moeten vragen. Werk dit bij zodra ontbrekende velden bekend zijn.
 ## USPs (Unique Selling Points)
 
 - Ambachtelijk gelato uit Bologna-machine
-- Wekelijks nieuwe smaken
+- Altijd drie wisselsmaken naast de vaste favorieten
 - Cannoli
 - Milkshakes
 

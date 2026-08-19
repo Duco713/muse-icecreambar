@@ -1,188 +1,153 @@
 # Plan n.a.v. feedback eigenaren — Muse Ice Cream Bar
 
-> Opgesteld: 19 augustus 2026
-> Bron: e-mail eigenaren + ChatGPT-mockup (uitgesprokener kleurgebruik)
+> Opgesteld 19 augustus 2026, bijgewerkt na uitvoering van fase 1 en 2
+> Bron: e-mail eigenaren + hun ChatGPT-voorbeeld voor het kleurgebruik
 
 ---
 
-## Samenvatting
+## Stand van zaken
 
-De feedback valt uiteen in twee stapels:
-
-- **Nu te doen (geen input nodig):** kleursysteem + tweede palet + kleurschakelaar,
-  quotes terugbrengen, wisselsmaken-blok vereenvoudigen, smaken/menu-pagina
-  klaarzetten en live-hangen in navigatie.
-- **Wachten op eigenaren:** definitieve smakenlijst + prijzen, foto's van de salon,
-  foto + tekst voor 'Over ons', keuze definitief palet, telefoon/e-mail.
-
-Niets in de "wachten"-stapel blokkeert de "nu"-stapel. We kunnen dus meteen door.
+| | |
+|---|---|
+| **Klaar** | kleursysteem, tweede palet + schakelknop, quotes, wisselsmaken, menustructuur |
+| **Wacht op Muse** | smakenlijst, prijzen, foto's, 'Over ons'-tekst, keuze palet, telefoon/e-mail |
+| **Terugdraaien** | `git checkout v1-warm` zet de hele site terug zoals hij bij hen lag |
 
 ---
 
-## Fase 1 — Kleursysteem + schakelaar (nu, geen input nodig)
+## Klaar — fase 1: kleursysteem en schakelaar
 
-### 1.1 Kleuren losweken uit de HTML
+### Eén bron voor alle kleuren
 
-Nu staan kleuren op drie plekken door elkaar:
+Kleuren stonden verspreid over vijf bestanden: `#84532c` alleen al op 47 plekken.
+Nu staan ze één keer in `assets/theme.css`, als RGB-triplets zodat Tailwind
+transparantie (`bg-primary/95`) blijft ondersteunen. De Tailwind-config verhuisde
+naar `assets/tailwind-config.js` en wijst naar die variabelen, zodat alle vijf
+pagina's dezelfde kleurnamen spreken.
 
-| Plek | Voorbeeld | Aantal |
-|---|---|---|
-| Tailwind-config in `index.html` | `"primary": "#84532c"` | ~50 tokens |
-| Hardcoded arbitrary values | `text-[#84532c]`, `bg-[#D4EFDF]`, `bg-[#FF9F8C]/20` | ~20x in index.html |
-| Losse `<style>`-regels | `.nav-link.active { color: #84532c }`, diamond-pattern | ~8x |
-| Subpagina's | `smaken.html` (40x), `faq.html` (13x), `privacy.html` (13x), `voorwaarden.html` (14x) | 80x |
+### Rolkleuren — de les uit de eerste poging
 
-**Aanpak:** één set CSS-variabelen op `:root`, en de Tailwind-config wijst
-daarnaar. RGB-triplets zodat transparantie (`bg-primary/95`, `bg-[#FF9F8C]/20`)
-blijft werken:
+De eerste versie zette diepgroen op `primary`. Op deze site stuurt dat token
+zowel de koppen als de knoppen als de links aan, dus werd de hele site groen.
+In hun voorbeeld is dat juist gesplitst: **groen draagt de tekst, roze doet het
+werk**. Daarom drie rollen bovenop het palet:
 
-```html
-<style>
-  :root {                       /* Palet A — huidig ("Warm") */
-    --c-primary:        132 83 44;
-    --c-primary-container: 244 179 132;
-    --c-background:     255 248 245;
-    --c-accent-mint:    212 239 223;
-    --c-accent-peach:   255 159 140;
-    /* ... */
-  }
-  [data-theme="bold"] {         /* Palet B — nieuw ("Bold") */
-    --c-primary:        14 77 46;
-    --c-primary-container: 240 83 143;
-    --c-background:     220 239 219;
-    /* ... */
-  }
-</style>
-<script>
-  tailwind.config = { theme: { extend: { colors: {
-    "primary": "rgb(var(--c-primary) / <alpha-value>)",
-    /* ... */
-  }}}}
-</script>
-```
+| Rol | Waarvoor | Warm | Bold |
+|---|---|---|---|
+| `action` | knoppen, links, actieve nav | `#84532c` | `#c01356` |
+| `emphasis` | scriptkoppen, wordmark, klemtoon | `#84532c` | `#e5407f` |
+| `decor` | sterren, iconen, patroon | `#f4b384` | `#c44d0a` |
 
-Alle `text-[#84532c]` en `bg-[#D4EFDF]` worden vervangen door tokens
-(`text-primary`, `bg-accent-mint`). Dat is de grootste klus van fase 1 — puur
-zoek-en-vervang, geen risico voor de layout.
+### Drie tinten roze, niet één
 
-### 1.2 Palet B: "Bold" op basis van de mockup
+De roze uit hun voorbeeld (`#f0538f`) is te licht voor tekst: wit erop haalt 3,3
+waar 4,5 nodig is. Dat is geen muggenzifterij — een ijssalon wordt op een telefoon
+in de zon bekeken. Daarom per gebruik een andere tint van dezelfde kleur:
 
-Startwaarden afgeleid uit het voorbeeld (fijnslijpen kan later):
+- `#c01356` — knopvlakken en kleine tekst (wit erop 6,1)
+- `#e5407f` — koppen vanaf 24px (op mint 3,3)
+- `#f0538f` — hun exacte roze, alleen nog als vlak zonder tekst erop: de blob
+  achter de hero-foto, het streepje onder de kop, de wash over de cannoli-sectie
 
-| Rol | Warm (huidig) | Bold (nieuw) |
-|---|---|---|
-| Achtergrond | `#fff8f5` crème | `#DCEFDB` mint |
-| Primair / koppen | `#84532c` bruin | `#0E4D2E` diepgroen |
-| Accent / knoppen | `#f4b384` zacht oranje | `#F0538F` hot pink |
-| Tweede accent | `#8dcad9` lichtblauw | `#F4762A` oranje |
-| Kaarten / vlakken | `#fff` wit | `#FBF3E4` crème |
+**Bold haalt nu overal de contrastnorm.** Warm heeft nog vier plekken die het niet
+halen (de sterrenrijen bij de reviews, 1,6 waar 3,0 nodig is). Die stonden er al
+vóór dit werk en zijn bewust gelaten, omdat warm exact moet blijven zoals het bij
+hen ligt. Los te trekken zodra zij een palet kiezen.
 
-Dit palet sluit ook beter aan bij de salon zelf: op de sfeerfoto's zit al het
-roze/groene ruitpatroon, het roze neonbord en de oranje/roze huisstijl van het
-logo. Het bruin was altijd al de vreemde eend.
+### De schakelknop
 
-**Aandachtspunt:** roze tekst op mint haalt de WCAG-contrastnorm niet altijd.
-Bij het uitwerken checken we elke tekst/achtergrond-combinatie; waar nodig
-gebruiken we diepgroen voor tekst en houden we roze voor vlakken en knoppen.
+Knopje rechtsonder, keuze onthouden in `localStorage`, plus `?theme=bold` in de
+URL voor een directe link. Geen kleurflits bij laden. Werkt op alle vijf pagina's.
 
-### 1.3 De schakelknop
-
-- Klein knopje in de header (of rechtsonder), icoon + label "Kleur".
-- Onthoudt de keuze in `localStorage`, plus `?theme=bold` in de URL zodat je
-  een directe link naar één variant kunt sturen — handig om aan de eigenaren
-  te laten zien zonder uitleg.
-- Inline mini-script in de `<head>` zodat er geen kleurflits bij het laden is.
-- Werkt op alle pagina's (index, smaken, faq, privacy, voorwaarden).
-- `<meta name="theme-color">` schakelt mee.
-
-**Belangrijk:** de knop is bedoeld als *keuzehulp*. Zodra de eigenaren kiezen,
-raad ik aan de knop te verwijderen (of te verbergen achter `?theme=`) — een
-publieke site die van huisstijl kan wisselen komt onaf over. De code voor beide
-paletten blijft dan gewoon staan, dus terugschakelen kost een regel.
+`assets/theme-switch.js` bevat bovenaan de instructie om hem in één stap te
+verwijderen zodra de keuze gemaakt is. Beide paletten blijven daarna gewoon in
+`theme.css` staan.
 
 ---
 
-## Fase 2 — Quotes en content (nu, geen input nodig)
+## Klaar — fase 2: quotes en content
 
-### 2.1 Quotes
+### Quotes
 
-| Quote | Status | Plek |
-|---|---|---|
-| "Licked it so it's mine" | staat er al | Sfeer-sectie (regel 466) — blijft |
-| "Life is short, make it sweet" | toevoegen | Hero, als grote kop in het scriptlettertype |
-| "Ice Ice Baby" | toevoegen | Bij de sfeerfoto's — sluit aan op het neonbord dat al op de foto staat |
+| Quote | Plek |
+|---|---|
+| "Life is short. Make it sweet." | hero-kop, groen aanlopend en roze landend |
+| "Licked it so it's mine" | sfeer-sectie, stond er al |
+| "Ice Ice Baby" | onderschrift bij de polaroid van het neonbord |
 
-De hero-kop wordt dan "Life is short. Make it sweet." met de huidige zin
-("het zoetste geheim van Valkenswaard") eronder als ondertitel — die is
-SEO-technisch waardevol (bevat 'Valkenswaard') dus die houden we, alleen kleiner.
+De tweekleurige kop is bewust maar twee keer gebruikt — de hero en de
+cannoli-sectie — precies zoals hun voorbeeld het doet. Roze is daar geen
+kopkleur maar een klemtoon binnen één kop; zodra elke kop het doet is het
+geen klemtoon meer.
 
-### 2.2 Wisselsmaken vereenvoudigen
+**Let op, dit is een afweging:** de oude hero-kop bevatte "Valkenswaard", wat
+voor vindbaarheid het zwaarste weegt van de hele pagina. Die zin staat nu als
+ondertitel direct eronder ("Ambachtelijk gelato in Valkenswaard"), samen met de
+paginatitel en de meta-description. Weegt vindbaarheid zwaarder dan de quote,
+dan draaien we het om.
 
-Zoals gevraagd: geen wekelijkse bijhoudverplichting. Het blok op `smaken.html`
-wordt één rustig kaartje:
+### Wisselsmaken
 
-> **Altijd drie wisselsmaken**
-> Welke? Dat verklappen we niet. Kom langs en ontdek wat er deze week in de
-> vitrine staat.
+Zoals gevraagd geen bijhoudverplichting. Eén blok met drie gestippelde
+vraagteken-kaartjes en de regel dat er altijd drie wisselsmaken staan. De vorm
+vertelt het verhaal: drie plekken, geen namen, kan niet verouderen.
 
-De TODO-comment over "smaak van de week invullen" en de belofte van *wekelijks
-nieuwe smaken* halen we weg — die staat nu ook nog in de meta-description en in
-de tekst op de homepage, dus die passen we mee aan.
+De opmaak om ze wél aan te kondigen staat er als commentaarblok onder, met
+uitleg hoe je hem aanzet. Zij gaven aan dat later misschien te willen.
 
-### 2.3 Smaken- en menupagina live zetten
+De belofte van *wekelijks* nieuwe smaken is overal weggehaald: homepage,
+smakenpagina, FAQ (zichtbare tekst én de JSON-LD voor Google) en
+`BUSINESS-INFO.md`.
 
-`smaken.html` bestaat al maar staat als **concept** (gele balk, niet in het menu,
-niet in de sitemap). Wat we nu al doen:
+### Menukaart
 
-- Structuur klaarzetten voor: vaste smaken, sorbets, en een **menukaart**
-  (hoorntje/bakje, cannoli, milkshakes, koffie) met ruimte voor prijzen.
-- Opmaak zo dat er later per smaak een foto bij kan — dan is het volgend seizoen
-  alleen foto's aanleveren, geen herbouw.
-- Zodra de lijst binnen is: concept-balk eruit, link in menu + footer, toevoegen
-  aan `sitemap.xml`, en de Product-JSON-LD uitbreiden van 3 naar alle smaken
-  (goed voor vindbaarheid in Google en in AI-antwoorden).
-
----
-
-## Fase 3 — Wachten op de eigenaren
-
-| Wat | Waarvoor nodig | Blokkeert |
-|---|---|---|
-| Vaste smakenlijst | `smaken.html` definitief maken | pagina live zetten |
-| Menukaart + prijzen | menu-sectie | menu-sectie |
-| Foto's salon, hoge kwaliteit | vervangen van de huidige beelden | niets — huidige foto's blijven zolang staan |
-| Recente foto Daan & Daymi | 'Over ons' | niets |
-| Tekst 'Over ons' | 'Over ons' — nu staat er een door mij geschreven tekst | niets |
-| Keuze palet A of B | knop eruit, definitieve huisstijl | alleen de laatste stap |
-| Telefoonnummer + e-mail | contactsectie, `BUSINESS-INFO.md` staat op [INVULLEN] | contact-uitbreiding |
-| Foto per smaak | volgend seizoen, al ingepland door hen | niets |
-
-Alles hier kan later ingeschoven worden zonder de rest opnieuw aan te raken.
+Structuur staat klaar op `smaken.html`: ijs per formaat, cannoli, milkshakes,
+koffie. Prijzen als `—` met een zichtbare notitie dat Muse ze nog aanlevert.
+De smaakkaarten zijn voorbereid op een foto per smaak (`.flavor-photo`), met
+één voorbeeld in commentaar — volgend seizoen is dat plakwerk, geen herbouw.
 
 ---
 
-## Punten om even bij de eigenaren te checken
+## Wacht op Muse
 
-1. **Hoe letterlijk nemen we de mockup over?** Het voorbeeld verandert meer dan
-   kleur alleen: een ander lettertype voor de koppen (schreefletter), stickers,
-   ruitpatronen, en een andere menu-indeling. Mijn voorstel: eerst alleen de
-   kleuren omzetten, dat bekijken, en daarna eventueel de rest.
-2. **In de mockup staat "LOCATIES" (meervoud)** en een knop "Vind een locatie".
-   Muse heeft één zaak aan de Eindhovenseweg — dat neem ik niet over, tenzij er
-   uitbreidingsplannen zijn.
-3. **De foto's in de mockup zijn AI-gegenereerd.** We gebruiken hun eigen foto's;
-   de mockup is puur richtlijn voor de sfeer en kleur.
-4. **De teksten in de mockup zijn ook AI** ("Ambachtelijk ijs, verrassende smaken
-   en een flinke dosis good vibes") — leuk als startpunt, maar hun eigen
-   'Over ons'-tekst komt nog, dus daar wachten we op.
+| Wat | Blokkeert |
+|---|---|
+| Vaste smakenlijst | smakenpagina definitief live zetten |
+| Prijzen menukaart | de `—` in de menukaart |
+| Foto's salon, hoge kwaliteit | niets — huidige foto's blijven staan |
+| Recente foto Daan & Daymi | niets |
+| Tekst 'Over ons' | niets — er staat nu een door mij geschreven tekst |
+| Keuze palet warm of bold | de knop weghalen, definitief live |
+| Telefoonnummer + e-mail | staat op [INVULLEN] in BUSINESS-INFO.md |
+| Foto per smaak | volgend seizoen, door hen zelf ingepland |
+
+Zodra de smakenlijst en prijzen binnen zijn: concept-balk weg, link in menu en
+footer, toevoegen aan `sitemap.xml`, en de Product-JSON-LD uitbreiden van drie
+naar alle smaken.
 
 ---
 
-## Volgorde
+## Te vragen bij de eigenaren
 
-1. Kleuren omzetten naar variabelen + tokens (grootste klus, geen zichtbare wijziging)
-2. Palet Bold toevoegen + schakelknop → **link doorsturen zodat zij kunnen vergelijken**
-3. Quotes toevoegen, wisselsmaken vereenvoudigen
-4. Menu-/smakenstructuur klaarzetten
-5. *(wachten)* content invullen zodra die binnen is
-6. Palet vastzetten, knop eruit, live
+1. **Een handjevol smaken die jullie ooit gemaakt hebben**, in verleden tijd —
+   "eerder in de vitrine: limoncello, aardbei-basilicum, stroopwafel". Verleden
+   tijd belooft niets, dus het kan nooit teleurstellen, maar het beantwoordt wel
+   de vraag die de bezoeker echt heeft: *wat voor soort smaken maken jullie?*
+   "Drie wisselsmaken" zegt daar niets over, "mango-chili" wel. Eenmalig
+   aanleveren, daarna nooit meer aanraken.
+2. **Welk palet wordt het?** Stuur ze de link met de knop erin.
+3. **Hun voorbeeld verandert alleen kleur, verder niets** — dat is bevestigd.
+   Een schreefletter voor de koppen, stickers en ruitpatronen zaten er ook in,
+   maar die laten we staan tenzij zij erom vragen.
+4. **In het voorbeeld staat "LOCATIES" (meervoud)** met een "Vind een
+   locatie"-knop. Muse heeft één zaak; niet overgenomen.
+
+---
+
+## Nog te doen wanneer de keuze valt
+
+- [ ] Palet vastzetten: `data-theme="bold"` op de `<html>`-tag, of niets voor warm
+- [ ] `assets/theme-switch.js` en het mini-scriptje uit de `<head>` verwijderen
+- [ ] Favicon-set, logo en `assets/og-image.jpg` opnieuw maken — dat zijn platte
+      beeldbestanden in de huidige kleuren, die volgen de knop niet
+- [ ] Sterrenrijen in warm: contrast oplossen als warm wint
