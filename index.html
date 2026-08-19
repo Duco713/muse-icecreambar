@@ -330,6 +330,19 @@
 <h2 class="text-headline-lg font-headline-lg text-primary mb-2">Zet je smaakpapillen in vuur en vlam</h2>
 <div class="h-1 w-24 bg-primary-container mx-auto rounded-full"></div>
 </div>
+<!-- ==========================================================================
+     TWEE VARIANTEN, ÉÉN KEUZE — tijdelijk, net als de kleurschakelaar
+     --------------------------------------------------------------------------
+     A "vast"    : de drie smaken met naam en foto (zoals de site nu is)
+     B "mystery" : drie naamloze wisselsmaken, kom zelf ontdekken
+
+     Onduidelijk is of Snickers, Zure matten en Black Heaven vaste smaken zijn
+     of juist de drie wisselsmaken. Beide staan klaar; de knop rechtsonder
+     schakelt. Zodra Muse kiest: de andere variant weghalen, de knop uit
+     assets/theme-switch.js halen, en bij B ook de Product-JSON-LD bovenaan
+     dit bestand aanpassen (die noemt nu de drie smaken bij naam).
+     ====================================================================== -->
+<div data-flavor-option="vast">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Flavor 1 -->
 <div class="group relative bg-accent-1 p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgb(var(--c-accent-1))] hover:-translate-y-2 transition-all duration-500 reveal">
@@ -381,6 +394,46 @@
                     Kom ze ontdekken
 <span class="material-symbols-outlined text-base">arrow_forward</span>
 </a>
+</div>
+</div>
+
+<!-- ---------- Variant B: de drie wisselsmaken, zonder namen ---------- -->
+<div data-flavor-option="mystery" hidden>
+<p class="text-body-lg text-on-surface-variant text-center max-w-2xl mx-auto -mt-10 mb-12">
+                Er staan altijd drie wisselsmaken in de vitrine, en elke week zijn dat andere.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-accent-1 p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgb(var(--c-accent-1))] text-center reveal">
+<div class="h-64 mb-6 rounded-2xl bg-white/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Wisselsmaak 1</h3>
+<p class="text-on-surface-variant font-body-md">Deze week iets anders dan vorige week.</p>
+</div>
+<div class="bg-accent-2 p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgb(var(--c-accent-2))] text-center reveal reveal-delay-1">
+<div class="h-64 mb-6 rounded-2xl bg-white/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Wisselsmaak 2</h3>
+<p class="text-on-surface-variant font-body-md">Soms een klassieker, soms iets geks.</p>
+</div>
+<div class="bg-accent-3 p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgb(var(--c-accent-3))] text-center reveal reveal-delay-2">
+<div class="h-64 mb-6 rounded-2xl bg-white/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Wisselsmaak 3</h3>
+<p class="text-on-surface-variant font-body-md">Wij verklappen niets. Kom maar kijken.</p>
+</div>
+</div>
+<div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-x-3 gap-y-2 text-center reveal reveal-delay-3">
+<p class="text-body-lg text-on-surface-variant">
+                    Welke er deze week staan? Dat ontdek je in de ijssalon.
+                </p>
+<a href="smaken.html" class="inline-flex items-center gap-1 text-action font-bold hover:underline whitespace-nowrap">
+                    Bekijk de hele kaart
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
 </div>
 </section>
 <!-- Sfeer Section -->

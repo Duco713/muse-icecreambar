@@ -15,6 +15,19 @@ en halen de site het verst vooruit.
       Link met het schakelknopje rechtsonder meesturen. Eén klik, ze zien beide.
       Dit blokkeert de laatste stap voor livegang, verder niets.
 
+- [ ] **Zijn Snickers, Zure matten en Black Heaven vaste smaken of juist de
+      drie wisselsmaken?**
+      Hier zat een aanname in de site die niemand ooit bevestigd heeft. Hun zin
+      "voor nu willen we het onderdeel met de wisselsmaken graag eenvoudig
+      houden" gaat vermoedelijk precies over dat blok van drie kaarten op de
+      homepage — drie kaarten, drie wisselsmaken. "Terug op verzoek" en "voor
+      de durvers" klinken ook niet als smaken die er altijd staan.
+
+      Op de homepage staat nu een tweede knop rechtsonder die tussen beide
+      varianten schakelt, dus ze hoeven het niet uit te leggen: ze kijken en
+      wijzen aan. Vraag er wel bij welke smaken er dan wél altijd zijn — die
+      horen dan op de homepage.
+
 - [ ] **Een handjevol wisselsmaken die jullie ooit gemaakt hebben.**
       In verleden tijd, dus: "eerder in de vitrine stonden limoncello,
       aardbei-basilicum, stroopwafel." Verleden tijd belooft niets, dus het kan
