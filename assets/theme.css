@@ -1,0 +1,100 @@
+/* ============================================================================
+   Muse Ice Cream Bar — kleurpaletten
+   ----------------------------------------------------------------------------
+   Elke kleur staat hier één keer, als RGB-triplet, zodat Tailwind transparantie
+   (bv. bg-primary/95) blijft ondersteunen: rgb(var(--c-primary) / <alpha-value>)
+
+   Palet wisselen:  <html data-theme="bold">   of de knop rechtsonder
+                    of ?theme=bold / ?theme=warm in de URL
+
+   Dit bestand wordt door alle pagina's gebruikt. Eén kleur veranderen doe je
+   hier, niet in de HTML.
+   ========================================================================= */
+
+:root {
+    /* --- Palet "warm" — de huidige huisstijl (standaard) --- */
+    --c-inverse-primary: 250 185 137;   /* #fab989 */
+    --c-tertiary-fixed: 175 236 252;   /* #afecfc */
+    --c-surface-variant: 236 224 218;   /* #ece0da */
+    --c-on-background: 32 27 23;   /* #201b17 */
+    --c-on-primary-fixed: 48 20 0;   /* #301400 */
+    --c-on-primary-container: 114 67 30;   /* #72431e */
+    --c-on-secondary-fixed: 26 28 28;   /* #1a1c1c */
+    --c-on-surface-variant: 81 68 59;   /* #51443b */
+    --c-secondary-fixed: 226 226 226;   /* #e2e2e2 */
+    --c-error-container: 255 218 214;   /* #ffdad6 */
+    --c-outline: 132 116 106;   /* #84746a */
+    --c-on-tertiary: 255 255 255;   /* #ffffff */
+    --c-primary-fixed-dim: 250 185 137;   /* #fab989 */
+    --c-primary: 132 83 44;   /* #84532c */
+    --c-on-error: 255 255 255;   /* #ffffff */
+    --c-surface-container: 247 236 230;   /* #f7ece6 */
+    --c-on-primary-fixed-variant: 104 60 23;   /* #683c17 */
+    --c-on-tertiary-fixed: 0 31 37;   /* #001f25 */
+    --c-secondary-fixed-dim: 198 198 199;   /* #c6c6c7 */
+    --c-secondary: 93 95 95;   /* #5d5f5f */
+    --c-background: 255 248 245;   /* #fff8f5 */
+    --c-surface: 255 248 245;   /* #fff8f5 */
+    --c-error: 186 26 26;   /* #ba1a1a */
+    --c-on-primary: 255 255 255;   /* #ffffff */
+    --c-inverse-surface: 53 47 43;   /* #352f2b */
+    --c-inverse-on-surface: 250 238 232;   /* #faeee8 */
+    --c-surface-tint: 132 83 44;   /* #84532c */
+    --c-on-surface: 32 27 23;   /* #201b17 */
+    --c-surface-container-lowest: 255 255 255;   /* #ffffff */
+    --c-surface-container-low: 253 241 235;   /* #fdf1eb */
+    --c-on-secondary-fixed-variant: 69 71 71;   /* #454747 */
+    --c-on-error-container: 147 0 10;   /* #93000a */
+    --c-primary-fixed: 255 220 197;   /* #ffdcc5 */
+    --c-on-secondary-container: 97 99 99;   /* #616363 */
+    --c-primary-container: 244 179 132;   /* #f4b384 */
+    --c-tertiary-fixed-dim: 147 208 223;   /* #93d0df */
+    --c-tertiary: 37 102 116;   /* #256674 */
+    --c-surface-dim: 227 216 210;   /* #e3d8d2 */
+    --c-tertiary-container: 141 202 217;   /* #8dcad9 */
+    --c-on-secondary: 255 255 255;   /* #ffffff */
+    --c-surface-container-highest: 236 224 218;   /* #ece0da */
+    --c-surface-bright: 255 248 245;   /* #fff8f5 */
+    --c-on-tertiary-container: 12 86 99;   /* #0c5663 */
+    --c-secondary-container: 223 224 224;   /* #dfe0e0 */
+    --c-outline-variant: 214 195 183;   /* #d6c3b7 */
+    --c-surface-container-high: 241 230 224;   /* #f1e6e0 */
+    --c-on-tertiary-fixed-variant: 0 78 91;   /* #004e5b */
+    --c-accent-1: 212 239 223;   /* #d4efdf */
+    --c-accent-2: 230 230 250;   /* #e6e6fa */
+    --c-accent-3: 255 159 140;   /* #ff9f8c */
+}
+
+[data-theme="bold"] {
+    /* --- Palet "bold" — mint / diepgroen / hot pink / oranje --- */
+    --c-background: 222 239 220;   /* #deefdc */
+    --c-surface: 222 239 220;   /* #deefdc */
+    --c-surface-bright: 232 244 230;   /* #e8f4e6 */
+    --c-surface-dim: 201 227 198;   /* #c9e3c6 */
+    --c-surface-container-lowest: 255 255 255;   /* #ffffff */
+    --c-surface-container-low: 251 243 228;   /* #fbf3e4 */
+    --c-surface-container: 251 243 228;   /* #fbf3e4 */
+    --c-surface-container-high: 246 234 214;   /* #f6ead6 */
+    --c-surface-container-highest: 239 224 200;   /* #efe0c8 */
+    --c-surface-variant: 246 234 214;   /* #f6ead6 */
+    --c-primary: 14 77 46;   /* #0e4d2e */
+    --c-surface-tint: 14 77 46;   /* #0e4d2e */
+    --c-primary-container: 240 83 143;   /* #f0538f */
+    --c-primary-fixed: 255 211 228;   /* #ffd3e4 */
+    --c-primary-fixed-dim: 240 83 143;   /* #f0538f */
+    --c-inverse-primary: 240 83 143;   /* #f0538f */
+    --c-on-primary: 255 255 255;   /* #ffffff */
+    --c-on-primary-container: 140 18 68;   /* #8c1244 */
+    --c-on-surface: 11 59 38;   /* #0b3b26 */
+    --c-on-background: 14 77 46;   /* #0e4d2e */
+    --c-on-surface-variant: 47 93 69;   /* #2f5d45 */
+    --c-outline: 111 154 130;   /* #6f9a82 */
+    --c-outline-variant: 185 212 194;   /* #b9d4c2 */
+    --c-tertiary: 226 100 28;   /* #e2641c */
+    --c-tertiary-container: 251 199 155;   /* #fbc79b */
+    --c-inverse-surface: 14 77 46;   /* #0e4d2e */
+    --c-inverse-on-surface: 251 243 228;   /* #fbf3e4 */
+    --c-accent-1: 251 243 228;   /* #fbf3e4 */
+    --c-accent-2: 253 185 210;   /* #fdb9d2 */
+    --c-accent-3: 251 199 155;   /* #fbc79b */
+}

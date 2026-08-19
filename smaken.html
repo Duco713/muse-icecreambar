@@ -6,6 +6,10 @@
 <title>Onze IJssmaken | Muse Icecreambar Valkenswaard</title>
 <meta name="description" content="Bekijk de ijssmaken van Muse Icecreambar in Valkenswaard — vaste favorieten zoals Snickers ijs en Black Heaven, klassieke gelato, sorbets en wekelijks wisselende smaken."/>
 <link rel="canonical" href="https://duco713.github.io/muse-icecreambar/smaken.html"/>
+<link rel="stylesheet" href="assets/theme.css"/>
+<!-- Zet het palet vóór de eerste paint, anders zie je even de verkeerde kleur. -->
+<script>(function(){try{var q=new URLSearchParams(location.search).get('theme');var t=q||localStorage.getItem('muse-theme');if(q)localStorage.setItem('muse-theme',q);if(t==='bold')document.documentElement.setAttribute('data-theme','bold');}catch(e){}})();</script>
+<script src="assets/theme-switch.js" defer></script>
 <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico"/>
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png"/>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png"/>
@@ -54,24 +58,25 @@
   ============================================================================
 -->
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/tailwind-config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap"/></noscript>
 <style>
-body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff8f5; color: #201b17; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: rgb(var(--c-background)); color: rgb(var(--c-on-surface)); }
 h1, h2, h3 { font-family: 'Epilogue', sans-serif; }
 .flavor-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.flavor-list li { background: #fff; border: 1px solid #e9dfd6; border-radius: 9999px; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.95rem; }
-.flavor-card { border: 1px solid #e9dfd6; border-radius: 1.25rem; padding: 1.25rem 1.5rem; background: #fff; }
+.flavor-list li { background: #fff; border: 1px solid rgb(var(--c-outline-variant)); border-radius: 9999px; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.95rem; }
+.flavor-card { border: 1px solid rgb(var(--c-outline-variant)); border-radius: 1.25rem; padding: 1.25rem 1.5rem; background: #fff; }
 </style>
 </head>
 <body class="px-6 md:px-16 py-12 max-w-3xl mx-auto">
 <nav aria-label="Breadcrumb" class="mb-8 text-sm">
 <ol class="flex items-center gap-2 flex-wrap">
-<li><a href="index.html" class="text-[#84532c] font-medium hover:underline">Home</a></li>
-<li aria-hidden="true" class="text-[#84532c]/50">›</li>
-<li class="text-[#51443b]" aria-current="page">Onze IJssmaken</li>
+<li><a href="index.html" class="text-primary font-medium hover:underline">Home</a></li>
+<li aria-hidden="true" class="text-primary/50">›</li>
+<li class="text-on-surface-variant" aria-current="page">Onze IJssmaken</li>
 </ol>
 </nav>
 
@@ -81,34 +86,34 @@ h1, h2, h3 { font-family: 'Epilogue', sans-serif; }
 Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we de pagina definitief live.
 </div>
 
-<h1 class="text-4xl font-extrabold text-[#84532c] mb-2">Onze ijssmaken</h1>
-<p class="text-base text-[#51443b] mb-2 leading-relaxed">Ambachtelijk gelato uit Valkenswaard, dagelijks vers gemaakt. Naast onze vaste favorieten komen er <strong>wekelijks nieuwe smaken</strong> bij.</p>
-<p class="text-sm text-[#51443b] mb-10">Laatst bijgewerkt: juni 2026</p>
+<h1 class="text-4xl font-extrabold text-primary mb-2">Onze ijssmaken</h1>
+<p class="text-base text-on-surface-variant mb-2 leading-relaxed">Ambachtelijk gelato uit Valkenswaard, dagelijks vers gemaakt. Naast onze vaste favorieten komen er <strong>wekelijks nieuwe smaken</strong> bij.</p>
+<p class="text-sm text-on-surface-variant mb-10">Laatst bijgewerkt: juni 2026</p>
 
 <!-- ======================= VASTE FAVORIETEN (BEVESTIGD) ======================= -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold text-[#84532c] mb-5">Vaste favorieten</h2>
+<h2 class="text-2xl font-bold text-primary mb-5">Vaste favorieten</h2>
 <div class="grid gap-4">
 <div class="flavor-card">
 <div class="flex items-center justify-between gap-3 mb-1">
-<h3 class="text-lg font-bold text-[#201b17]">Snickers ijs</h3>
-<span class="text-xs font-semibold bg-[#84532c]/10 text-[#84532c] px-2.5 py-1 rounded-full whitespace-nowrap">Bestseller</span>
+<h3 class="text-lg font-bold text-on-surface">Snickers ijs</h3>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-2.5 py-1 rounded-full whitespace-nowrap">Bestseller</span>
 </div>
-<p class="text-[#51443b] leading-relaxed">Romig chocolade-ijs met stukjes karamel, pinda en chocolade. Je favoriete reep nu in ijsvorm.</p>
-</div>
-<div class="flavor-card">
-<div class="flex items-center justify-between gap-3 mb-1">
-<h3 class="text-lg font-bold text-[#201b17]">Zure matten ijs</h3>
-<span class="text-xs font-semibold bg-[#84532c]/10 text-[#84532c] px-2.5 py-1 rounded-full whitespace-nowrap">Voor de durvers</span>
-</div>
-<p class="text-[#51443b] leading-relaxed">Zoet, zuur en lekker verfrissend. Het iconische snoepje nu als romig ijs. Durf jij &rsquo;m te proeven?</p>
+<p class="text-on-surface-variant leading-relaxed">Romig chocolade-ijs met stukjes karamel, pinda en chocolade. Je favoriete reep nu in ijsvorm.</p>
 </div>
 <div class="flavor-card">
 <div class="flex items-center justify-between gap-3 mb-1">
-<h3 class="text-lg font-bold text-[#201b17]">Black Heaven</h3>
-<span class="text-xs font-semibold bg-[#84532c]/10 text-[#84532c] px-2.5 py-1 rounded-full whitespace-nowrap">Terug op verzoek</span>
+<h3 class="text-lg font-bold text-on-surface">Zure matten ijs</h3>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-2.5 py-1 rounded-full whitespace-nowrap">Voor de durvers</span>
 </div>
-<p class="text-[#51443b] leading-relaxed">Hazelnoot-choco. Na lang wachten eindelijk de Black Heaven terug in onze vitrine.</p>
+<p class="text-on-surface-variant leading-relaxed">Zoet, zuur en lekker verfrissend. Het iconische snoepje nu als romig ijs. Durf jij &rsquo;m te proeven?</p>
+</div>
+<div class="flavor-card">
+<div class="flex items-center justify-between gap-3 mb-1">
+<h3 class="text-lg font-bold text-on-surface">Black Heaven</h3>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-2.5 py-1 rounded-full whitespace-nowrap">Terug op verzoek</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Hazelnoot-choco. Na lang wachten eindelijk de Black Heaven terug in onze vitrine.</p>
 </div>
 </div>
 </section>
@@ -116,8 +121,8 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
 <!-- ======================= KLASSIEKE GELATO (CONCEPT) ======================= -->
 <!-- Bewerk vrij: elke smaak = één <li>-regel. Verwijder of voeg toe naar wens. -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold text-[#84532c] mb-2">Klassieke gelato</h2>
-<p class="text-[#51443b] mb-5 leading-relaxed">Romige gelato op melkbasis — de tijdloze klassiekers.</p>
+<h2 class="text-2xl font-bold text-primary mb-2">Klassieke gelato</h2>
+<p class="text-on-surface-variant mb-5 leading-relaxed">Romige gelato op melkbasis — de tijdloze klassiekers.</p>
 <ul class="flavor-list">
 <li>Vanille (Madagascar)</li>
 <li>Stracciatella</li>
@@ -137,8 +142,8 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
 <!-- ======================= SORBETS (CONCEPT) ======================= -->
 <!-- Sorbets zijn meestal op waterbasis en vaak vegan/zonder zuivel. Pas aan naar wens. -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold text-[#84532c] mb-2">Sorbets &amp; fruit</h2>
-<p class="text-[#51443b] mb-5 leading-relaxed">Verfrissend fruitijs op waterbasis — vaak zonder zuivel.</p>
+<h2 class="text-2xl font-bold text-primary mb-2">Sorbets &amp; fruit</h2>
+<p class="text-on-surface-variant mb-5 leading-relaxed">Verfrissend fruitijs op waterbasis — vaak zonder zuivel.</p>
 <ul class="flavor-list">
 <li>Aardbei</li>
 <li>Citroen</li>
@@ -153,9 +158,9 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
 
 <!-- ======================= WISSELENDE SMAKEN ======================= -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold text-[#84532c] mb-3">Wisselende smaken van de week</h2>
-<div class="flavor-card bg-[#fff3ec] border-[#f0d9cc]">
-<p class="text-[#51443b] leading-relaxed mb-3">Elke week experimenteren we met verse ingrediënten en zetten we nieuwe smaken in de vitrine. Het actuele aanbod wisselt — kom langs of houd onze socials in de gaten.</p>
+<h2 class="text-2xl font-bold text-primary mb-3">Wisselende smaken van de week</h2>
+<div class="flavor-card bg-surface-container-low border-outline-variant">
+<p class="text-on-surface-variant leading-relaxed mb-3">Elke week experimenteren we met verse ingrediënten en zetten we nieuwe smaken in de vitrine. Het actuele aanbod wisselt — kom langs of houd onze socials in de gaten.</p>
 <!--
   TIP: Wil je de smaak/smaken van déze week tonen? Vul ze hieronder in.
   Verwijder anders dit lijstje. Voorbeeld:
@@ -164,20 +169,20 @@ Streep weg wat jullie niet hebben en vul aan wat ontbreekt — daarna zetten we 
     <li>Bijv. Aardbei-basilicum</li>
   </ul>
 -->
-<a href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener" class="inline-block font-semibold text-[#84532c] hover:underline">Bekijk de smaak van de week op Instagram →</a>
+<a href="https://www.instagram.com/muse_icecreambar/" target="_blank" rel="noopener" class="inline-block font-semibold text-primary hover:underline">Bekijk de smaak van de week op Instagram →</a>
 </div>
 </section>
 
 <!-- ======================= ALLERGIE-NOTITIE ======================= -->
 <section class="mb-12">
-<div class="rounded-2xl bg-[#f3ece6] px-5 py-4 text-sm text-[#51443b] leading-relaxed">
-<strong>Allergieën of dieetwensen?</strong> In onze keuken verwerken wij onder andere noten, zuivel, ei, gluten en soja, en we kunnen sporen niet uitsluiten. Vraag het gerust even aan onze medewerkers in de ijsbar. Meer weten? Lees onze <a href="faq.html" class="text-[#84532c] font-medium hover:underline">veelgestelde vragen</a>.
+<div class="rounded-2xl bg-surface-container px-5 py-4 text-sm text-on-surface-variant leading-relaxed">
+<strong>Allergieën of dieetwensen?</strong> In onze keuken verwerken wij onder andere noten, zuivel, ei, gluten en soja, en we kunnen sporen niet uitsluiten. Vraag het gerust even aan onze medewerkers in de ijsbar. Meer weten? Lees onze <a href="faq.html" class="text-primary font-medium hover:underline">veelgestelde vragen</a>.
 </div>
 </section>
 
 <div class="flex flex-wrap gap-3">
-<a href="index.html#contact" class="inline-block bg-[#84532c] text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition">Kom langs in Valkenswaard</a>
-<a href="index.html" class="inline-block border-2 border-[#84532c] text-[#84532c] px-6 py-3 rounded-full font-bold hover:bg-[#84532c]/5 transition">Terug naar home</a>
+<a href="index.html#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition">Kom langs in Valkenswaard</a>
+<a href="index.html" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-full font-bold hover:bg-primary/5 transition">Terug naar home</a>
 </div>
 </body>
 </html>
