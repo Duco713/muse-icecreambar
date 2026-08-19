@@ -43,6 +43,17 @@
     render();
   }
 
+  function buttonStyle(bottom) {
+    return [
+      'position:fixed', 'right:16px', 'bottom:' + bottom, 'z-index:60',
+      'display:flex', 'align-items:center', 'gap:8px',
+      'padding:10px 14px', 'border-radius:9999px',
+      'border:1px solid rgba(0,0,0,.10)', 'background:#fff', 'color:#333',
+      'font:600 13px/1 system-ui,-apple-system,sans-serif', 'cursor:pointer',
+      'box-shadow:0 4px 16px rgba(0,0,0,.14)'
+    ].join(';');
+  }
+
   var btn;
 
   function render() {
@@ -63,14 +74,7 @@
     btn = document.createElement('button');
     btn.type = 'button';
     btn.setAttribute('data-theme-switch', '');
-    btn.style.cssText = [
-      'position:fixed', 'right:16px', 'bottom:16px', 'z-index:60',
-      'display:flex', 'align-items:center', 'gap:8px',
-      'padding:10px 14px', 'border-radius:9999px',
-      'border:1px solid rgba(0,0,0,.10)', 'background:#fff', 'color:#333',
-      'font:600 13px/1 system-ui,-apple-system,sans-serif', 'cursor:pointer',
-      'box-shadow:0 4px 16px rgba(0,0,0,.14)'
-    ].join(';');
+    btn.style.cssText = buttonStyle('16px');
     btn.addEventListener('click', function () {
       apply(current() === 'warm' ? 'bold' : 'warm');
     });
@@ -103,7 +107,7 @@
     var b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('data-flavor-switch', '');
-    b.style.cssText = btn.style.cssText.replace('bottom:16px', 'bottom:66px');
+    b.style.cssText = buttonStyle('66px');
     function paint() {
       var next = currentFlavors() === 'vast' ? 'mystery' : 'vast';
       b.setAttribute('aria-label', 'Toon de smaken als ' + next);
