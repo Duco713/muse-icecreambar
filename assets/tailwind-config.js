@@ -13,6 +13,10 @@ tailwind.config = {
   theme: {
     extend: {
       "colors": {
+              "action": "rgb(var(--c-action) / <alpha-value>)",
+              "on-action": "rgb(var(--c-on-action) / <alpha-value>)",
+              "emphasis": "rgb(var(--c-emphasis) / <alpha-value>)",
+              "decor": "rgb(var(--c-decor) / <alpha-value>)",
               "inverse-primary": "rgb(var(--c-inverse-primary) / <alpha-value>)",
               "tertiary-fixed": "rgb(var(--c-tertiary-fixed) / <alpha-value>)",
               "surface-variant": "rgb(var(--c-surface-variant) / <alpha-value>)",

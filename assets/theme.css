@@ -63,6 +63,19 @@
     --c-accent-1: 212 239 223;   /* #d4efdf */
     --c-accent-2: 230 230 250;   /* #e6e6fa */
     --c-accent-3: 255 159 140;   /* #ff9f8c */
+
+    /* --- Rolkleuren --------------------------------------------------------
+       Hierboven staat WELKE kleuren het palet heeft, hieronder WAAR ze voor
+       dienen. Op de site sturen deze drie het meeste beeld:
+         action    knoppen en klikbare accenten
+         emphasis  uitgelichte tekst: scriptkoppen, wordmark, aanhalingen
+         decor     versiering zonder functie: sterren, iconen, patronen
+       Zo kan een palet knoppen roze maken zonder ook alle koppen roze te maken.
+       --------------------------------------------------------------------- */
+    --c-action: 132 83 44;        /* #84532c */
+    --c-on-action: 255 255 255;   /* #ffffff */
+    --c-emphasis: 132 83 44;      /* #84532c */
+    --c-decor: 244 179 132;       /* #f4b384 */
 }
 
 [data-theme="bold"] {
@@ -90,11 +103,24 @@
     --c-on-surface-variant: 47 93 69;   /* #2f5d45 */
     --c-outline: 111 154 130;   /* #6f9a82 */
     --c-outline-variant: 185 212 194;   /* #b9d4c2 */
-    --c-tertiary: 226 100 28;   /* #e2641c */
+    --c-tertiary: 196 77 10;   /* #c44d0a */
     --c-tertiary-container: 251 199 155;   /* #fbc79b */
     --c-inverse-surface: 14 77 46;   /* #0e4d2e */
     --c-inverse-on-surface: 251 243 228;   /* #fbf3e4 */
     --c-accent-1: 251 243 228;   /* #fbf3e4 */
     --c-accent-2: 253 185 210;   /* #fdb9d2 */
     --c-accent-3: 251 199 155;   /* #fbc79b */
+
+    /* --- Rolkleuren: roze doet het werk, groen draagt de tekst ------------
+       De roze uit het voorbeeld (#f0538f) is prachtig maar te licht om
+       leesbare tekst mee te zetten: wit erop haalt 3,3 waar 4,5 nodig is.
+       Daarom drie tinten van dezelfde kleur, per gebruik gekozen:
+         action    #c01356  kleine tekst en knopvlakken   (wit erop 6,1)
+         emphasis  #e5407f  alleen koppen vanaf 24px      (op mint  3,3)
+         primary-container blijft #f0538f: puur vlak, nooit tekst erop
+       --------------------------------------------------------------------- */
+    --c-action: 192 19 86;        /* #c01356  diep roze */
+    --c-on-action: 255 255 255;   /* #ffffff */
+    --c-emphasis: 229 64 127;     /* #e5407f  roze, alleen groot */
+    --c-decor: 196 77 10;         /* #c44d0a  oranje, sterren en iconen */
 }
